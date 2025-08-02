@@ -1,0 +1,66 @@
+#input your name
+full_name=input("Enter your full name: ")
+name_let=full_name.split()
+name= ""
+for i in name_let:
+    name+=i
+#chechking how many vowels and consonants have the name
+vowel=['a','e','i','o','u','A','E','I','O','U']
+v_cnt=0
+con_cnt=0
+letter=[]
+for i in name:
+    if i.isalpha():
+        if i in vowel:
+            v_cnt+=1
+        else:
+            con_cnt+=1
+        
+print("Vowels: ",v_cnt)
+print("Consonants: ",con_cnt)  
+
+#printing the names ascii values in list
+asci=[]
+for i in name:
+    asci.append(ord(i))
+print("ASCII values: ",asci)  
+
+#printing revers of the name
+rev_name= ""
+for i in range(len(name)-1,-1,-1):
+    rev_name+=name[i]
+print("Reversed Name: ",rev_name)
+
+#checking the name is palindrome or not
+if(name.lower()==rev_name.lower()):
+    print("Name is palindrome")
+else:
+    print("Name is not palindrome")
+#print unique letters in sorted way at list
+unique=[]
+for i in name:
+    if i!=unique:
+        unique.append(i)
+unique.sort()
+print("Unique letters sorted: ",unique)
+#print first non repeated word
+repeat=False
+for i in name:
+    if name.count(i)==1:
+        repeat=i
+        break
+print("First non-repeated character: ",repeat)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
